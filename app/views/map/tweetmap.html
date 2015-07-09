@@ -9,11 +9,11 @@
    			<p>Activity feeds</p>
    		</div>	
    		<div class="feed-content">
-   			<div ng-repeat="status in root.twitterFriends.data | limitTo: 20">
+   			<div ng-repeat="status in root.twitterFriends.data" class="map-status">
    			    <div class="item">
    			        <img class="friend-profile-img" src="{{status.profile_image_url}}">
    			        <p class="message home-tweet-text">
-   			        <span class="home-user-screen-name">@{{ status.screen_name }} - {{ status.status.created_at | tweetFromNow }}</span>
+   			        <span class="home-user-screen-name">@{{ status.screen_name }}</span>
    			        <br>
    			        <span ng-bind-html="status.status.text | tweetTextLink | tweetMention | tweetHashtag | removeTwitterPicLink | toTrusted "></span>
    			        </p>
@@ -22,7 +22,7 @@
    		</div>
    		<div class="feed-list">
    			<ul>
-   				<li ng-repeat="listItem in ['Twitter', 'Internet of things']" class="active-feed">{{listItem}}</li>
+   				<li ng-repeat="listItem in ['Twitter', 'Internet of things']" class="active-feed" ng-click="toggleDataSource($index)" ng-attr-id="{{'listItem'+$index}}">{{listItem}}</li>
    			</ul>
    		</div>
    </div>

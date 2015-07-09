@@ -10,9 +10,13 @@ var marker=[];
  * @ngInject
  */
 
-    controllersModule.controller('MapCtrl', ['$rootScope','$http', 'HelloService', function($rootScope,$http,hello) {
+    controllersModule.controller('MapCtrl', ['$rootScope','$http', '$scope', 'HelloService', function($rootScope,$http, $scope, hello) {
 
-
+        $scope.toggleDataSource = function(id) {
+            console.log("FOOO");
+            var indentifier = "#listItem" + id;
+            angular.element(indentifier).toggleClass("active-feed");
+        }
         
         var followerslayer = new L.LayerGroup();
         var followinglayer = new L.LayerGroup();
