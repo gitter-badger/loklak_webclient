@@ -1,8 +1,31 @@
 
-<div class="content-wrapper">
+<div class="content-wrapper map-view">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
    <div id="map" style="width:100%; height:800px"></div>
    <div id="TweetBox" style="position:absolute; top:10%;left:15%; max-width:50%; border:2px;"></div>
+
+   <div class="activity-feed">
+   		<div class="feed-header">
+   			<p>Activity feeds</p>
+   		</div>	
+   		<div class="feed-content">
+   			<div ng-repeat="status in root.twitterFriends.data | limitTo: 20">
+   			    <div class="item">
+   			        <img class="friend-profile-img" src="{{status.profile_image_url}}">
+   			        <p class="message home-tweet-text">
+   			        <span class="home-user-screen-name">@{{ status.screen_name }} - {{ status.status.created_at | tweetFromNow }}</span>
+   			        <br>
+   			        <span ng-bind-html="status.status.text | tweetTextLink | tweetMention | tweetHashtag | removeTwitterPicLink | toTrusted "></span>
+   			        </p>
+   			    </div>
+   			</div>
+   		</div>
+   		<div class="feed-list">
+   			<ul>
+   				<li ng-repeat="listItem in ['Twitter', 'Internet of things']" class="active-feed">{{listItem}}</li>
+   			</ul>
+   		</div>
+   </div>
 </div>
 
 

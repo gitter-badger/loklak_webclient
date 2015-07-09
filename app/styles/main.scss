@@ -8,6 +8,7 @@
 // Partials
 @import 'topnav';
 @import 'home';
+@import 'map';
 @import 'data-connect';
 * {
     font-family: $font-family;
@@ -2314,33 +2315,6 @@
 		}
 	}
 
-/* Style for map pop up */
-	.leaflet-popup-content {
-		width: auto !important;
-		p {
-			margin: 0 !important;
-		}
-	}
-	.single-tweet.map-tweet {
-		margin: 0;
-		padding: 0;
-		min-width: 250px;
-		.top-metadata {
-			img.avatar {
-				height: 55px;
-				width: 55px;
-			}
-			.user-data-wrapper {
-				display: inline-block;
-				font-size: 11px;
-				margin-left: 20px;
-				padding: 0;
-			}
-		}
-		.detail-metadata {
-			margin-top: 10px;
-		}
-	}
 
 .navbar.navbar-static-top {
 	height: 50px;

@@ -1,0 +1,112 @@
+
+/* Map activity feeds */
+.map-view.content-wrapper {
+	position: relative;
+}
+
+.activity-feed {
+	position: absolute;
+	right: 10px;
+	top: 68px;
+	width: 245px;
+	height: 78%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: white;
+	padding: 35px 7px 10px 7px;
+	.feed-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		p {
+			background: $search-twitter-blue;
+			color: white;
+			margin: 0;
+			padding: 10px 0px;
+			text-align: center;
+			font-size: 15px;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+		}
+	}
+	.feed-content {
+		height: 500px;
+		overflow: hidden;
+	}
+	.feed-list {
+		position: absolute;
+		bottom: 0; 
+		left: 0;
+		width: 100%;
+		padding: 10px;
+		background-color: #ecf0f5;
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				margin: 0;
+				padding: 8px;
+				color: #333333;
+				border: 1px solid $search-twitter-blue;
+				color: white;
+				margin-bottom: 7px;
+				text-align: center;
+				font-size: 15px;
+				letter-spacing: 0.5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			li.active-feed {
+				background-color: $search-twitter-blue;
+				color: white;
+				letter-spacing: 0.5px;
+			}
+		}
+		p {
+			border-top: px solid black;
+			color: #333333;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			font-size: 15px;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+		}
+	}
+}
+
+
+
+
+
+
+
+/* Style for map pop up */
+	.leaflet-popup-content {
+		width: auto !important;
+		p {
+			margin: 0 !important;
+		}
+	}
+	.single-tweet.map-tweet {
+		margin: 0;
+		padding: 0;
+		min-width: 250px;
+		.top-metadata {
+			img.avatar {
+				height: 55px;
+				width: 55px;
+			}
+			.user-data-wrapper {
+				display: inline-block;
+				font-size: 11px;
+				margin-left: 20px;
+				padding: 0;
+			}
+		}
+		.detail-metadata {
+			margin-top: 10px;
+		}
+	}
